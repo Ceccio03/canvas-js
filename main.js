@@ -14,7 +14,7 @@ const ctx = canvas.getContext('2d');
 
 const rectArray = [];
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 1000; i++) {
     const rect = Rect.random(canvas.width, canvas.height);
     
     rectArray.push(rect);
@@ -26,5 +26,6 @@ function moveAll() {
         rect.animate(canvas.width, canvas.height);
         rect.draw(ctx);
     }
+    requestAnimationFrame(moveAll);
 }
-setInterval(moveAll, 1);
+requestAnimationFrame(moveAll);
