@@ -5,6 +5,37 @@ class Rect {
         this.width = width;
         this.height = height;
         this.color = color;
+        this.velocityX = (2 * Math.random()) - 1;
+        this.velocityY = (2 * Math.random()) - 1;
+    }
+
+    animate(canvasWidth, canvasHeight) {
+        // if (Math.random() > 0.99) {
+        //     this.velocityX = (2 * Math.random()) - 1;
+        // }
+
+        // if (Math.random() > 0.99) {
+        //     this.velocityY = (2 * Math.random()) - 1;
+        // }
+
+        if (this.originX < 0 || this.originX + this.width > canvasWidth) {
+            this.velocityX = this.velocityX * -1;
+        }
+
+        if (this.originY < 0 || this.originY + this.height > canvasHeight) {
+            this.velocityY = this.velocityY * -1;
+        }
+
+        // if (this.originX + this.width > canvasWidth) {
+        //     this.velocityX = this.velocityX * -1;
+        // }
+
+        // if (this.originY + this.height > canvasHeight) {
+        //     this.velocityY = this.velocityY * -1;
+        // }
+
+        this.originX += this.velocityX;
+        this.originY += this.velocityY;
     }
 
     draw(ctx) {
