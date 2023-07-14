@@ -10,7 +10,7 @@ class Rect {
         ctx.strokeRect(this.originX, this.originY, this.width, this.height);
     }
 
-    random(canvasWidth, canvasHeight) {
+    static random(canvasWidth, canvasHeight) {
         const randomWidth = 500 * Math.random();
         const randomHeight = 500 * Math.random();
         const randomX = canvasWidth * Math.random();
