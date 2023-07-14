@@ -8,17 +8,17 @@ class Rect {
     }
 
     draw(ctx) {
-        ctx.strokeStyle = this.color;
-        ctx.strokeRect(this.originX, this.originY, this.width, this.height);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.originX, this.originY, this.width, this.height);
     }
 
     static random(canvasWidth, canvasHeight) {
         const randomRed = Math.floor(256 * Math.random());
         const randomGreen = Math.floor(256 * Math.random());
         const randomBlue = Math.floor(256 * Math.random());
-        const rgbString = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-        const randomWidth = 500 * Math.random();
-        const randomHeight = 500 * Math.random();
+        const rgbString = 'rgba(' + randomRed + ', ' + randomGreen + ', ' + randomBlue + ', ' + Math.random() + ')';
+        const randomWidth = 200 * Math.random();
+        const randomHeight = 200 * Math.random();
         const randomX = (canvasWidth - randomWidth) * Math.random();
         const randomY = (canvasHeight - randomHeight) * Math.random();
         const newRect = new Rect(randomX, randomY, randomWidth, randomHeight, rgbString);
